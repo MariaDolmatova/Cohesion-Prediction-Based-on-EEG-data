@@ -23,24 +23,24 @@ from logger import get_logger
 
 
 # Binarise labels
-out_cohesion = process_labels("Averaged Cohesion scores.csv", "labels.csv")
+cohesion_binary = process_labels("data/Averaged Cohesion scores.csv")
 
 # Binary threshold visual
-plot_binarisation_choice(out_cohesion)
+plot_binarisation_choice(cohesion_binary)
 
 # Pie chart label distribution
 label_distribution()
 
 # Reshape all datasets
-reshape_input_eeg("correlations_array.csv", "reshaped_correlations.csv", has_part=False)
-reshape_input_eeg("correlations_array5.csv", "reshaped_correlations5.csv", has_part=True)
-reshape_input_eeg("correlations_array10.csv", "reshaped_correlations10.csv", has_part=True)
-reshape_input_eeg("correlations_array60.csv", "reshaped_correlations60.csv", has_part=True)
-reshape_input_eeg("correlations_array120.csv", "reshaped_correlations120.csv", has_part=True)
+reshape_input_eeg("data/correlations_array.csv", "data/reshaped_correlations.csv", has_part=False)
+reshape_input_eeg("data/correlations_array5.csv", "data/reshaped_correlations5.csv", has_part=True)
+reshape_input_eeg("data/correlations_array10.csv", "data/reshaped_correlations10.csv", has_part=True)
+reshape_input_eeg("data/correlations_array60.csv", "data/reshaped_correlations60.csv", has_part=True)
+reshape_input_eeg("data/correlations_array120.csv", "data/reshaped_correlations120.csv", has_part=True)
 
 ################################
 # Perform SVM
-best_model, best_params, best_score, results_df = train_svm("reshaped_correlations120.csv", "labels.csv")
+best_model, best_params, best_score, results_df = train_svm("reshaped_correlations120.csv", cohesion_binary)
 results_df.head()
 
 # Visuals for labels heatmap + best F1 score for SVM
@@ -53,11 +53,11 @@ plot_grid_search_results(results_df)
 ################################
 # Perform multiple datasets SVM
 datasets = [
-    ("reshaped_correlations.csv", "labels.csv"),
-    ("reshaped_correlations10.csv", "labels.csv"),
-    ("reshaped_correlations120.csv", "labels.csv"),
-    ("reshaped_correlations5.csv", "labels.csv"),
-    ("reshaped_correlations60.csv", "labels.csv"),
+    ("reshaped_correlations.csv", cohesion_binary),
+    ("reshaped_correlations10.csv", cohesion_binary),
+    ("reshaped_correlations120.csv", cohesion_binary),
+    ("reshaped_correlations5.csv", cohesion_binary),
+    ("reshaped_correlations60.csv", cohesion_binary),
 ]
 
 results_df = multi_datasets(datasets)
