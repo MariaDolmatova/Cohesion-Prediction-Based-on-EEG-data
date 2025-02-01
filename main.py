@@ -29,7 +29,7 @@ cohesion_binary = process_labels("data/Averaged Cohesion scores.csv")
 plot_binarisation_choice(cohesion_binary)
 
 # Pie chart label distribution
-label_distribution()
+label_distribution(cohesion_binary)
 
 # Reshape all datasets
 reshape_input_eeg("data/correlations_array.csv", "data/reshaped_correlations.csv", has_part=False)

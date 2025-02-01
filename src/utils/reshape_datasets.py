@@ -1,10 +1,9 @@
 import numpy as np
 import pandas as pd
 
-def reshape_input_eeg(input_file: str, output_file, has_part=True) -> None:
-    """
-    Reshape table
-    """
+def reshape_input_eeg(input_file, output_file,has_part=True):
+    import pandas as pd
+
     df = pd.read_csv(input_file, header=None)
 
     if has_part:  # "part" means we dissect the data by time, this is how we name it in the CSV file
@@ -20,11 +19,8 @@ def reshape_input_eeg(input_file: str, output_file, has_part=True) -> None:
 
         num_rows = len(df)
         bands_per_pair = 5
-        num_pairs = num_rows // bands_per_pair
         if num_rows % bands_per_pair != 0:
-            raise ValueError(
-                "check the rows!"
-            )  # Add Pair column for the rows since there is no Pair column in this format
+            raise ValueError("check the rows!")  # Add Pair column for the rows since there is no Pair column in this format
         df["Pair"] = ["pair " + str(i // bands_per_pair + 1) for i in range(len(df))]
 
     id_columns = ["Pair", "Band"]
@@ -35,25 +31,40 @@ def reshape_input_eeg(input_file: str, output_file, has_part=True) -> None:
         id_vars=id_columns,
         value_vars=[f"Electrode{i}" for i in range(1, 9)],
         var_name="Electrode",
-        value_name="Correlation",
+        value_name="Correlation"
     )
 
     # Pivot the table
     if has_part:
         pivoted = melted.pivot_table(
-            index="Pair", columns=["Band", "Part", "Electrode"], values="Correlation", sort=False
+            index="Pair",
+            columns=["Band", "Part", "Electrode"],
+            values="Correlation",
+            sort=False
         )
 
-        pivoted.columns = [f"{band}_T{part}_{electrode}" for (band, part, electrode) in pivoted.columns]
+        pivoted.columns = [
+            f"{band}_T{part}_{electrode}"
+            for (band, part, electrode) in pivoted.columns
+        ]
     else:
-        pivoted = melted.pivot_table(index="Pair", columns=["Band", "Electrode"], values="Correlation", sort=False)
+        pivoted = melted.pivot_table(
+            index="Pair",
+            columns=["Band", "Electrode"],
+            values="Correlation",
+            sort=False
+        )
 
-        pivoted.columns = [f"{band}_{electrode}" for (band, electrode) in pivoted.columns]
+        pivoted.columns = [
+            f"{band}_{electrode}"
+            for (band, electrode) in pivoted.columns
+        ]
 
     pivoted.reset_index(inplace=True)
     pivoted.drop(pivoted[pivoted["Pair"] == "pair 1"].index, inplace=True)
-    df_cleaned = df.dropna()
+    pivoted_cleaned = pivoted.dropna()
 
-    # Save the result
-    pivoted.to_csv(output_file, index=False)
-    print(f"The input csv processing is done as {output_file}")
+    pivoted_cleaned.to_csv(output_file, index=False)
+    print(f'The reshape csv is done as {output_file}')
+
+    return pivoted_cleaned

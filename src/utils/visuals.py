@@ -38,9 +38,8 @@ def plot_binarisation_choice(out_cohesion):
   )
   fig.show()
 
-def label_distribution():
+def label_distribution(data):
   logger = get_logger()
-  data = pd.read_csv('labels.csv')
   label_counts = data.value_counts()
   if 'Labels' in data.columns:
     label_counts = data['Labels'].value_counts()
