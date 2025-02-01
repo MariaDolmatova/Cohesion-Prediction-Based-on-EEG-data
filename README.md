@@ -1,4 +1,4 @@
-# Final Project for Python  
+# Cohesion Prediction Based on EEG data
 **By Li and Dolmatova**
 
 ## Introduction  
@@ -13,7 +13,7 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
   - Sampling rate: 500 Hz.  
   - Tools: MATLAB for signal processing; Python for data reshaping.  
   - Band separation: 5 frequency bands using Butterworth filter.  
-  - Segmentation: Time windows of 2s, 4s, 24s, 48s, 60s.  
+  - Segmentation: Time windows of 2s, 4s, 24s, 48s. 
   - Quality Control: Data from 43 pairs of participants retained after artifact detection.
 
 
@@ -31,7 +31,7 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
 
 #### SVM Model  
 - Dataset: All 5 datasets (2 seconds, 4 seconds, 24 seconds, 48 seconds, 60 seconds time windows and full 4 mins).  
-- Techniques: GridSearchCV for hyperparameter tuning, 5-fold cross-validation.
+- Techniques: GridSearchCV for hyperparameter tuning, 5-fold cross-validation, weight balance.
 
 #### CNN Model  
 - Dataset: 2-second window segments (120 parts).
@@ -41,7 +41,7 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
   - Batch size: 16.  
   - Learning rate: 0.001.  
   - Max Epochs: 50.  
-  - Loss function: Binary Cross Entropy.  
+  - Loss function: Binary Cross Entropy with Logits Loss.  
   - Optimizer: Adam.  
   - Padding: 1
 
@@ -50,10 +50,10 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
 ## Results  
 
 ### SVM Model  
-- Average F1 Score is 0.75
+- Best F1 Score: 0.77
 
 ### CNN Model  
-- Average F1 Score =  0.56
+- Average F1 Score =  0.55
 - Overfitting 
 
 ---
@@ -71,3 +71,20 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
 - Increase dataset size with more participants.  
 - Refine synchrony calculation methods.  
 - Focus on PFC, ACC regions, and gamma-band activity in future analyses.
+
+---
+
+### Project Data
+- All data files should be stored in the `data/` directory
+
+### Project Workflow
+
+1. **Load Data**: Retrieve the required data files from the `data/` directory.
+2. **Generate Labels**: Compute cohesion labels from the dataset.
+3. **Prepare Input Data**: Process the raw .csv file to create a properly formatted input table.
+4. **Visualize Labels**: Generate visualizations to inspect the label distribution.
+5. **Model Training**: Train the machine learning model using the processed data.
+6. **Result Visualization**: Plot the model's predictions and performance.
+7. **Logging**: Maintain logs throughout the process.
+
+### To run the project follow this commands:
