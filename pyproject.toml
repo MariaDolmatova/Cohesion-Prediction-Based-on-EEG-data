@@ -13,7 +13,8 @@ dependencies = [
     "torch==2.5.1",
     "matplotlib==3.9.2",
     "torch",
-    "plotly",
+    "plotly"
+    "configparser",
 ]
 [project.optional-dependencies]
 dev = [
