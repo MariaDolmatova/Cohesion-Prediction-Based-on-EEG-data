@@ -16,6 +16,7 @@ def plot_binarisation_choice(out_cohesion):
     y='Labels',
     color='Binary Labels',
     labels={'X': 'X-Axis Label', 'Y': 'Y-Axis Label'},
+    color_continuous_scale='bluered_r',
     title='Anerage score distribution per pair and binary selection threshold'
   )
 
@@ -110,8 +111,22 @@ def plot_grid_search_results(results_df):
         margin=dict(r=120),
         title=dict(x=0.5)
     )
-
     fig.show()
+    return plot_data
+  else:
+    logger.info("Column 'mean_test_f1' not found in the DataFrame. Please check the column name.")
+
+def grid_search_trend(plot_data):
+  fig = px.scatter(plot_data,
+        x='Index',
+        y='F1',
+        trendline='ols',
+        title='F1 Score Trend Visualization',
+        labels={'Index': 'Parameter Combination Index', 'F1': 'F1 Score'})
+  
+  fig.data[1].line.color = "green"
+  
+  fig.show()
 
 def plot_f1_scores(dataset_scores):
   logger = get_logger()
