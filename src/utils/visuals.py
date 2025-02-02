@@ -166,7 +166,6 @@ def plot_pca(components, features, n_features=15):
 
         fig.show()
 
-"""TEST THIS"""
 def plot_cross_validation_results(fold, train_losses, val_losses, train_accs, val_accs):
 
     logger = get_logger()
