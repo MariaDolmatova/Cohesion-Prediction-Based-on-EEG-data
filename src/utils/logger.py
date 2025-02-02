@@ -22,20 +22,3 @@ logger = logging.getLogger()
 
 def get_logger():
     return logger
-
-
-
-
-"""App logger.
-
-import logging
-
-# configure the root logger
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s - %(filename)s - %(funcName)s - %(levelname)s - %(message)s", 
-    handlers=[logging.FileHandler("main.log"), logging.StreamHandler()], # DELETE THIS IF WANT TO GO TO TERMINAL
-)
-# Get the root logger
-logger = logging.getLogger()
-"""
