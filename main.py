@@ -12,6 +12,7 @@ from src.utils.visuals import (
     plot_grid_search_results,
     plot_heatmap,
     plot_pca,
+    grid_search_trend,
 )
 
 logger = get_logger()
@@ -42,7 +43,8 @@ heatmap_data = results_df.pivot_table(index="param_svc__kernel", columns="param_
 
 # Plot heatmap
 plot_heatmap(heatmap_data)
-plot_grid_search_results(results_df)
+plot_data = plot_grid_search_results(results_df)
+grid_search_trend(plot_data)
 
 ################################
 # Perform multiple datasets SVM
