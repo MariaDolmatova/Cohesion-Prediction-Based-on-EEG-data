@@ -96,14 +96,12 @@ pip install virtualenv
 #create virtual environment (serve only this project):
 python -m venv venv
 #activate virtual environment
-.\venv\Scripts\activate #windows
+.\venv\Scripts\activate 
 + (venv) should appear as prefix to all command (run next command just after activating venv)
 #update venv's python package-installer (pip) to its latest version
-python.exe -m pip install --upgrade pip
-#install projects packages (Everything needed to run the project)
-pip install -e .
-#install dev packages (Additional packages for linting, testing and other developer tools)
-pip install -e .[dev]
+pip install --upgrade pip
+#install projects packages
+pip install -e .[dev]     
 
 python main.py
 ``` 
