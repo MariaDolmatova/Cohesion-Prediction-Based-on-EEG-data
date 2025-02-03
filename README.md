@@ -89,8 +89,6 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
 
 ### To run the project follow this commands:
 Make sure you are in the **project root directory** before running any command.
-```sh
-cd path/to/Cohesion-Prediction-Based-on-EEG-data
 
 ```bash 
 #install Virtualenv is - a tool to set up your Python environments
