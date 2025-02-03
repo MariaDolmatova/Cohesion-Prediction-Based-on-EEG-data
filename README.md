@@ -91,7 +91,7 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
 Make sure you are in the **project root directory** before running any command.
 
 ```bash 
-#install Virtualenv is - a tool to set up your Python environments
+#install Virtual environment
 pip install virtualenv
 #create virtual environment (serve only this project):
 python -m venv venv
