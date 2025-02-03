@@ -88,3 +88,24 @@ This project aims to classify dyads as high or low cohesive based on EEG synchro
 7. **Logging**: Maintain logs throughout the process.
 
 ### To run the project follow this commands:
+Make sure you are in the **project root directory** before running any command.
+```sh
+cd path/to/Cohesion-Prediction-Based-on-EEG-data
+
+```bash 
+#install Virtualenv is - a tool to set up your Python environments
+pip install virtualenv
+#create virtual environment (serve only this project):
+python -m venv venv
+#activate virtual environment
+.\venv\Scripts\activate #windows
++ (venv) should appear as prefix to all command (run next command just after activating venv)
+#update venv's python package-installer (pip) to its latest version
+python.exe -m pip install --upgrade pip
+#install projects packages (Everything needed to run the project)
+pip install -e .
+#install dev packages (Additional packages for linting, testing and other developer tools)
+pip install -e .[dev]
+
+python main.py
+``` 
