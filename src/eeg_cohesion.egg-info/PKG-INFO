@@ -7,9 +7,9 @@ Requires-Dist: pandas==2.2.3
 Requires-Dist: scikit-learn==1.6.0
 Requires-Dist: torch==2.5.1
 Requires-Dist: matplotlib==3.9.2
-Requires-Dist: scipy==1.14.0
 Requires-Dist: torch
 Requires-Dist: plotly
+Requires-Dist: configparser
 Provides-Extra: dev
 Requires-Dist: eeg_cohesion[lint]; extra == "dev"
 Requires-Dist: eeg_cohesion[test]; extra == "dev"

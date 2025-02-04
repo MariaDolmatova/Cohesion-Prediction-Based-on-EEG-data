@@ -1,5 +1,19 @@
+.gitignore
 README.md
+Subjective_cohesion_by_EEG.code-workspace
+main.py
 pyproject.toml
+tox.ini
+config/cnn_config.ini
+config/svm_config.ini
+data/Averaged Cohesion scores.csv
+data/correlations_array.csv
+data/correlations_array10.csv
+data/correlations_array120.csv
+data/correlations_array5.csv
+data/correlations_array60.csv
+matlab/eeg_prep_without_win.m
+matlab/eeg_preprocessing_w_win120.m
 src/__init__.py
 src/eeg_cohesion.egg-info/PKG-INFO
 src/eeg_cohesion.egg-info/SOURCES.txt
@@ -10,4 +24,8 @@ src/models/cnn.py
 src/models/pca.py
 src/models/svm.py
 src/utils/__init__.py
-src/utils/preprocess.py
+src/utils/labels_preparation.py
+src/utils/logger.py
+src/utils/random_seed.py
+src/utils/reshape_datasets.py
+src/utils/visuals.py
