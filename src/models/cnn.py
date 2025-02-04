@@ -11,8 +11,8 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from sklearn.metrics import accuracy_score, f1_score
 import copy
-from random_seed import set_random_seed
-from visuals import plot_cross_validation_results
+from ..utils.random_seed import set_random_seed
+from ..utils.visuals import plot_cross_validation_results
 from ..utils.logger import get_logger
 
 class CNN_120dataset(nn.Module):
