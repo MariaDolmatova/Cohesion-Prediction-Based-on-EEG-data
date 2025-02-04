@@ -1,0 +1,6 @@
+2025-02-04 21:43:10,021 - __init__.py - wrapper - DEBUG - matplotlib data path: /Users/xli/Desktop/project python/Cohesion-Prediction-Based-on-EEG-data/venv/lib/python3.13/site-packages/matplotlib/mpl-data
+2025-02-04 21:43:10,027 - __init__.py - wrapper - DEBUG - CONFIGDIR=/Users/xli/.matplotlib
+2025-02-04 21:43:10,029 - __init__.py - <module> - DEBUG - interactive is False
+2025-02-04 21:43:10,029 - __init__.py - <module> - DEBUG - platform is darwin
+2025-02-04 21:43:10,074 - __init__.py - wrapper - DEBUG - CACHEDIR=/Users/xli/.matplotlib
+2025-02-04 21:43:10,077 - font_manager.py - _load_fontmanager - DEBUG - Using fontManager instance from /Users/xli/.matplotlib/fontlist-v390.json
