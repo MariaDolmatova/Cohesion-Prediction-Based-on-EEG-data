@@ -23,9 +23,15 @@ def process_labels(input):
   # 1 = High Cohesive, 0 = Low Cohesive
   cohesion_binary_set = (pair_mean > 4.5).astype(int)
 
+  out_cohesion = pd.DataFrame({
+  'pair': range(1, 44),
+  'Labels': pair_mean,
+  'Binary Labels': cohesion_binary
+  })
+
   # Create a new DataFrame
   cohesion_binary = pd.DataFrame({
   'Labels': cohesion_binary_set
   })
 
-  return cohesion_binary
+  return cohesion_binary, out_cohesion

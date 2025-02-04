@@ -16,3 +16,15 @@
 2025-02-04 21:49:31,963 - __init__.py - <module> - DEBUG - platform is darwin
 2025-02-04 21:49:32,002 - __init__.py - wrapper - DEBUG - CACHEDIR=/Users/xli/.matplotlib
 2025-02-04 21:49:32,004 - font_manager.py - _load_fontmanager - DEBUG - Using fontManager instance from /Users/xli/.matplotlib/fontlist-v390.json
+2025-02-04 21:51:06,581 - __init__.py - wrapper - DEBUG - matplotlib data path: /Users/xli/Desktop/project python/Cohesion-Prediction-Based-on-EEG-data/venv/lib/python3.13/site-packages/matplotlib/mpl-data
+2025-02-04 21:51:06,584 - __init__.py - wrapper - DEBUG - CONFIGDIR=/Users/xli/.matplotlib
+2025-02-04 21:51:06,585 - __init__.py - <module> - DEBUG - interactive is False
+2025-02-04 21:51:06,585 - __init__.py - <module> - DEBUG - platform is darwin
+2025-02-04 21:51:06,619 - __init__.py - wrapper - DEBUG - CACHEDIR=/Users/xli/.matplotlib
+2025-02-04 21:51:06,621 - font_manager.py - _load_fontmanager - DEBUG - Using fontManager instance from /Users/xli/.matplotlib/fontlist-v390.json
+2025-02-04 21:52:29,751 - __init__.py - wrapper - DEBUG - matplotlib data path: /Users/xli/Desktop/project python/Cohesion-Prediction-Based-on-EEG-data/venv/lib/python3.13/site-packages/matplotlib/mpl-data
+2025-02-04 21:52:29,759 - __init__.py - wrapper - DEBUG - CONFIGDIR=/Users/xli/.matplotlib
+2025-02-04 21:52:29,761 - __init__.py - <module> - DEBUG - interactive is False
+2025-02-04 21:52:29,761 - __init__.py - <module> - DEBUG - platform is darwin
+2025-02-04 21:52:29,803 - __init__.py - wrapper - DEBUG - CACHEDIR=/Users/xli/.matplotlib
+2025-02-04 21:52:29,805 - font_manager.py - _load_fontmanager - DEBUG - Using fontManager instance from /Users/xli/.matplotlib/fontlist-v390.json

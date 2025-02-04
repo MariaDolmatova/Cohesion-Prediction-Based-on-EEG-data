@@ -18,10 +18,10 @@ from src.utils.visuals import (
 logger = get_logger()
 
 # Binarise labels
-cohesion_binary = process_labels("data/Averaged Cohesion scores.csv")
+cohesion_binary, out_cohesion = process_labels("data/Averaged Cohesion scores.csv")
 
 # Binary threshold visual
-plot_binarisation_choice(cohesion_binary)
+plot_binarisation_choice(out_cohesion)
 
 # Pie chart label distribution
 label_distribution(cohesion_binary)
