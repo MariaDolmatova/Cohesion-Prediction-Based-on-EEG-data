@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from logger import get_logger
+from ..utils.logger import get_logger
 
 def pca(csv_file, n_features=15):
 

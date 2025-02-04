@@ -13,7 +13,7 @@ from sklearn.metrics import accuracy_score, f1_score
 import copy
 from random_seed import set_random_seed
 from visuals import plot_cross_validation_results
-from logger import get_logger
+from ..utils.logger import get_logger
 
 class CNN_120dataset(nn.Module):
     def __init__(self):

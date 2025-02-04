@@ -1,4 +1,4 @@
-from logger import get_logger
+from src.utils.logger import get_logger
 from src.models import CNN_120dataset
 from src.models.cnn import fold_cross_validation_120dataset
 from src.models.pca import pca

@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 import configparser
 from ..utils.random_seed import set_random_seed
-from logger import get_logger
+from ..utils.logger import get_logger
 
 
 def train_svm(input, output):

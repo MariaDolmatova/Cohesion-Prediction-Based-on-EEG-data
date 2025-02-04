@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import seaborn as sns
 from plotly.subplots import make_subplots
-from logger import get_logger
+from .logger import get_logger
 
 
 def plot_binarisation_choice(out_cohesion):
