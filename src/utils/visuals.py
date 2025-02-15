@@ -37,6 +37,7 @@ def plot_binarisation_choice(out_cohesion):
     font=dict(size=12, color='black'),
     align='center'
   )
+  logger.info('heatbinarisation plot displayed')
   fig.show()
 
 def label_distribution(data):
@@ -54,6 +55,8 @@ def label_distribution(data):
     )
 
     fig.show()
+    logger.info('pie chart displayed')
+
   else:
     logger.info("Column 'label' not found in the CSV file. Please check the file structure.")
 
@@ -65,6 +68,7 @@ def plot_heatmap(heatmap_data):
   plt.xlabel('Gamma')
   plt.ylabel('Kernel type')
   plt.show()
+  logger.info('heatmap displayed')
 
 def plot_grid_search_results(results_df):
   
@@ -112,11 +116,13 @@ def plot_grid_search_results(results_df):
         title=dict(x=0.5)
     )
     fig.show()
+    logger.info('grid search results displayed')
     return plot_data
   else:
-    logger.info("Column 'mean_test_f1' not found in the DataFrame. Please check the column name.")
+    logger.info("Column 'mean_test_f1' not found in the DataFrame. Please check the column name.") # error handling
 
 def grid_search_trend(plot_data):
+  logger = get_logger()
   fig = px.scatter(plot_data,
         x='Index',
         y='F1',
@@ -127,6 +133,7 @@ def grid_search_trend(plot_data):
   fig.data[1].line.color = "green"
   
   fig.show()
+  logger.info('grid search trend displayed')
 
 def plot_f1_scores(dataset_scores):
   logger = get_logger()
@@ -149,13 +156,14 @@ def plot_f1_scores(dataset_scores):
   )
 
   fig.show()
+  logger.info('f1 scores displayed')
 
 def plot_pca(components, features, n_features=15):
 
     logger = get_logger()
     for i in range(len(components)):
         component = components[i]
-        top_indices = np.argsort(np.abs(component))[-n_features:]  # Top features by absolute weight
+        top_indices = np.argsort(np.abs(component))[-n_features:]  # top features by absolute weight
         top_features = features[top_indices]
         top_weights = component[top_indices]
 
@@ -180,6 +188,7 @@ def plot_pca(components, features, n_features=15):
         )
 
         fig.show()
+        logger.info('pca graphs displayed')
 
 def plot_cross_validation_results(fold, train_losses, val_losses, train_accs, val_accs):
 
@@ -220,3 +229,4 @@ def plot_cross_validation_results(fold, train_losses, val_losses, train_accs, va
     )
 
     fig.show()
+    logger.info('cross-validation results displayed')
